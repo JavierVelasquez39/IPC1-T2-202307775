@@ -7,14 +7,14 @@ public class Tarea2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Calculadora Matemática");
-        System.out.print("Ingrese el primer número: ");
+        System.out.println("Calculadora Matemática, bienvenido");
+        System.out.print("Por favor, ingresar el primer número: ");
         double num1 = scanner.nextDouble();
 
-        System.out.print("Ingrese la operación (+, -, *, /): ");
+        System.out.print("Ingrese la operación (suma +, resta -, multiplicación *, división /): ");
         char operacion = scanner.next().charAt(0);
 
-        System.out.print("Ingrese el segundo número: ");
+        System.out.print("Por favor, ingresar el segundo número: ");
         double num2 = scanner.nextDouble();
 
         double resultado = 0;
@@ -34,16 +34,16 @@ public class Tarea2 {
                     resultado = dividir(num1, num2);
                     break;
                 default:
-                    System.out.println("Operación no válida");
+                    System.out.println("La operación no es válida");
                     return;
             }
 
-            System.out.println("Resultado: " + resultado);
+            System.out.println("El resultado es: " + resultado);
 
         } catch (ArithmeticException e) {
             System.out.println("Error: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Ocurrió un error inesperado.");
+            System.out.println("Ocurrió un error.");
         } finally {
             scanner.close();
         }
@@ -63,7 +63,7 @@ public class Tarea2 {
 
     private static double dividir(double a, double b) {
         if (b == 0) {
-            throw new ArithmeticException("No se puede dividir por cero.");
+            throw new ArithmeticException("Es imposible dividir por cero.");
         }
         return a / b;
     }
